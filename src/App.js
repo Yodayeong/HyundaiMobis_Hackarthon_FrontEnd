@@ -7,6 +7,12 @@ import SelectSignup from './SelectSignup';
 import Signup from './Signup';
 import { Route, Link } from 'react-router-dom';
 
+function Alarm(props) {
+  return <a class="nav-link alarm" href="/" onClick={function(event){
+    event.preventDefault();
+    props.onChangeMode();
+  }}>알람</a>
+}
 function Header(props) {
   return <header>
     <h1 class="header-style"><a class="header-link" href="/" onClick={(event)=>{
@@ -68,9 +74,13 @@ function App() {
     {id:1, title:'로그인', body:<Login/>},
     {id:2, title:'회원가입', body:<SelectSignup/>},
   ])
+  
+
+  //tab의 기본값을 null로 세팅
+  const [tab, setTab] = useState('');
   let content = null;
   if(mode === 'WELCOME') {
-    content = <Article title="내 자녀 OOO의 승하차 여부" body="그림 첨부"></Article>
+    content = <Article title="내 자녀 OOO의 승하차 여부" body=<div class="bus-box"><img className={`bus-img ${tab === 'curr' ? 'active' : ''} `} src="img/bus.png" onClick={() => setTab('curr')} /></div>></Article>
   } else if(mode === 'READ') {
     let title, body = null;
     for(let i=0; i<topics.length; i++) {
@@ -109,7 +119,9 @@ function App() {
             setMode('READ');
             setId(id);
           }}></Nav>
-          <div class="nav-link alarm">알람</div>
+          <Alarm onChangeMode={function(){
+            alert('당신의 자녀에게 위험한 일이 생겼습니다!');
+          }}>알람</Alarm>
         </div>
       </div>
       <div class="content">

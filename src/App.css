@@ -79,3 +79,20 @@ body {
 .space{
   padding-top:2rem;
 }
+
+.bus-img{
+  height:20rem;
+}
+
+.bus-img.active{
+  filter: opacity(0.5) drop-shadow(0 0 0 #228b22);
+}
+
+.bus-box{
+  padding-top:3rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* filter: opacity(0.5) drop-shadow(0 0 0 #228b22); */
