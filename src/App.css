@@ -85,6 +85,10 @@ body {
 }
 
 .bus-img.active{
+  filter: opacity(0.5) drop-shadow(0 0 0 black);
+}
+
+.bus-img.deactive{
   filter: opacity(0.5) drop-shadow(0 0 0 #228b22);
 }
 

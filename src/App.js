@@ -77,10 +77,18 @@ function App() {
   
 
   //tab의 기본값을 null로 세팅
-  const [tab, setTab] = useState('');
+  const [color, setColor] = useState('black');
   let content = null;
   if(mode === 'WELCOME') {
-    content = <Article title="내 자녀 OOO의 승하차 여부" body=<div class="bus-box"><img className={`bus-img ${tab === 'curr' ? 'active' : ''} `} src="img/bus.png" onClick={() => setTab('curr')} /></div>></Article>
+    content = <Article title="내 자녀 OOO의 승하차 여부" body=
+    <div class="bus-box">
+      <img className={`bus-img ${color === 'blue' ? 'active' : ''} ${color === 'green' ? 'deactive' : ''} `} src="img/bus.png" />
+      <div>
+        <button onClick={()=>setColor('green')}>승차</button>
+        <button onClick={()=>setColor('blue')}>하차</button>
+      </div>
+    </div>>
+  </Article>
   } else if(mode === 'READ') {
     let title, body = null;
     for(let i=0; i<topics.length; i++) {
