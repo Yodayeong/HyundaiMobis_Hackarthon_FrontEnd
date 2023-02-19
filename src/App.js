@@ -4,8 +4,9 @@ import './App.css';
 import {useState} from 'react';
 import Login from "./Login";
 import SelectSignup from './SelectSignup';
+import Manager from './Manager';
 import Signup from './Signup';
-import { Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function Alarm(props) {
   return <a class="nav-link alarm" href="/" onClick={function(event){
@@ -26,7 +27,7 @@ function Nav(props) {
   for(let i=0; i<props.topics.length; i++){
     let t = props.topics[i];
     lis.push(<li class="nav-item" key={t.id}>
-      <a class="nav-link" id={t.id} href={'/read/'+t.id} onClick={(event)=>{
+      <a class="nav-link nav-login" id={t.id} href={'/read/'+t.id} onClick={(event)=>{
         event.preventDefault();
         props.onChangeMode(Number(event.target.id)); //event를 발생시키는 target(a태그)의 id
       }}>{t.title}</a>
@@ -73,6 +74,7 @@ function App() {
   const [topics, setTopics] = useState([
     {id:1, title:'로그인', body:<Login/>},
     {id:2, title:'회원가입', body:<SelectSignup/>},
+    {id:3, title:'관리자', body:<Manager/>},
   ])
   
 
