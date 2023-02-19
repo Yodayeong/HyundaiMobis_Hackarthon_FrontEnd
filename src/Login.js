@@ -16,29 +16,45 @@ export default function Login() {
                 "Accept":"application/json"
             },
         }).then(res=>{
-            console.log(res)
+            console.log(res);
+            //성공한 경우
+            if(res.status === 200) {
+                let loginForm = document.querySelector("#login");
+                let loginSuccess = document.querySelector("#login-success");
+
+                loginForm.style.display = "none";
+                loginForm.style.opacity = 0;
+                loginSuccess.style.display = "block";
+            }
         })
         result = await result.json();
         localStorage.setItem("user-info", JSON.stringify(result))
     }
     return (
-        <div class="login">
-            <div>
-                <div class="input-box">
-                    <div>아이디</div>
+        <div>
+            <div class="login">
+                <div id="login">
                     <div>
-                        <input type="text" onChange={(e)=>setUserId(e.target.value)} />
+                        <div class="input-box">
+                            <div>아이디</div>
+                            <div>
+                                <input type="text" onChange={(e)=>setUserId(e.target.value)} />
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <div>비밀번호</div>
+                            <div>
+                                <input type="text" onChange={(e)=>setPassword(e.target.value)} />
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="input-box">
-                    <div>비밀번호</div>
-                    <div>
-                        <input type="text" onChange={(e)=>setPassword(e.target.value)} />
+                    <div class="input-box center">
+                        <button onClick={login}>로그인하기</button>
                     </div>
                 </div>
             </div>
-            <div class="input-box center">
-                <button onClick={login}>로그인하기</button>
+            <div id="login-success" class="center login-complete">
+                <a class="nav-link" href="http://localhost:3000/">홈으로</a>
             </div>
         </div>
     )

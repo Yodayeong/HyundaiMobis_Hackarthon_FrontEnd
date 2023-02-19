@@ -109,3 +109,7 @@ body {
 .signup-success-login{
   display:none;
 }
+
+.login-complete{
+  display:none;
+}
