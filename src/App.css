@@ -99,4 +99,9 @@ body {
   align-items:center;
 }
 
-/* filter: opacity(0.5) drop-shadow(0 0 0 #228b22); */
+.signup-success{
+  display:none;
+  padding-top:2rem;
+  text-align:center;
+  font-weight:lighter;
+}

@@ -9,8 +9,8 @@ export default function SelectSignup() {
     return (
         <BrowserRouter>
             <div class="center">
-                <Link class="nav-link input-box" to="/signup/manager">관리자로 회원가입</Link>
-                <Link class="nav-link input-box" to="/signup/parents">학부모로 회원가입</Link>    
+                <Link id="select-signup" class="nav-link input-box" to="/signup/manager">관리자로 회원가입</Link>
+                <Link id="select" class="nav-link input-box" to="/signup/parents">학부모로 회원가입</Link>    
             </div>    
 
             <Routes>

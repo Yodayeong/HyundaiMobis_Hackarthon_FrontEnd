@@ -8,14 +8,16 @@ export default function Login() {
     async function login() {
         console.log(userId, password)
         let item = {userId, password};
-        let result = await fetch("http://localhost:8080/member/login", {
+        let result = await fetch("http://13.125.105.227:8080/member/login", {
             method: 'POST',
+            body:JSON.stringify(item),
             headers:{
                 "Content-Type":"application/json",
                 "Accept":"application/json"
             },
-            body:JSON.stringify(item)
-        });
+        }).then(res=>{
+            console.log(res)
+        })
         result = await result.json();
         localStorage.setItem("user-info", JSON.stringify(result))
     }

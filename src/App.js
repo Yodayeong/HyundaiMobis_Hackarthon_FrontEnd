@@ -82,7 +82,7 @@ function App() {
   if(mode === 'WELCOME') {
     content = <Article title="내 자녀 OOO의 승하차 여부" body=
     <div class="bus-box">
-      <img className={`bus-img ${color === 'blue' ? 'active' : ''} ${color === 'green' ? 'deactive' : ''} `} src="img/bus.png" />
+      <img className={`bus-img ${color === 'blue' ? 'active' : ''} ${color === 'green' ? 'deactive' : ''} `} src="assets/img/bus.png" />
       <div>
         <button onClick={()=>setColor('green')}>승차</button>
         <button onClick={()=>setColor('blue')}>하차</button>
