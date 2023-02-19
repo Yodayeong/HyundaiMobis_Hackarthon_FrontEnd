@@ -22,11 +22,13 @@ export default function Login() {
                 let loginForm = document.querySelector("#login");
                 let loginSuccess = document.querySelector("#login-success");
                 let loginSuccessMessage = document.querySelector("#login-success-message");
+                let signupSuccess = document.querySelector("#signup-success");
 
                 loginForm.style.display = "none";
                 loginForm.style.opacity = 0;
                 loginSuccess.style.display = "block";
                 loginSuccessMessage.style.display = "block";
+                signupSuccess.style.display = "none";
             }
         })
         result = await result.json();
