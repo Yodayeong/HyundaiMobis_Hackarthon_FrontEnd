@@ -21,10 +21,12 @@ export default function Login() {
             if(res.status === 200) {
                 let loginForm = document.querySelector("#login");
                 let loginSuccess = document.querySelector("#login-success");
+                let loginSuccessMessage = document.querySelector("#login-success-message");
 
                 loginForm.style.display = "none";
                 loginForm.style.opacity = 0;
                 loginSuccess.style.display = "block";
+                loginSuccessMessage.style.display = "block";
             }
         })
         result = await result.json();
@@ -53,8 +55,11 @@ export default function Login() {
                     </div>
                 </div>
             </div>
-            <div id="login-success" class="center login-complete">
-                <a class="nav-link" href="http://localhost:3000/">홈으로</a>
+            <div>
+                <h1 id="login-success" class="signup-success">로그인에 성공하였습니다!</h1>
+                <div id="login-success-message" class="center login-complete">
+                    <a class="nav-link" href="http://localhost:3000/">홈으로</a>
+                </div>
             </div>
         </div>
     )
