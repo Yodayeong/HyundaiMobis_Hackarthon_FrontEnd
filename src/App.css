@@ -105,3 +105,7 @@ body {
   text-align:center;
   font-weight:lighter;
 }
+
+.signup-success-login{
+  display:none;
+}

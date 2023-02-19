@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css';
 import {useState} from 'react';
+import Login from './Login';
 
 export default function Signup() {
     const [name, setName] = useState("");
@@ -25,6 +26,7 @@ export default function Signup() {
                 let selectSignup = document.querySelector("#select-signup");
                 let select = document.querySelector("#select");
                 let signupSuccess = document.querySelector("#signup-success");
+                let signupSuccessLogin = document.querySelector("#signup-success-login");
 
                 signupForm.style.display = "none";
                 signupForm.style.opacity = 0;
@@ -33,6 +35,7 @@ export default function Signup() {
                 select.style.display = "none";
                 select.style.opacity = 0;
                 signupSuccess.style.display = "block";
+                signupSuccessLogin.style.display = "block";
             }
         })
         result = await result.json();
@@ -79,6 +82,9 @@ export default function Signup() {
             </div>
             <div>
                 <h1 id="signup-success" class="signup-success">회원가입에 성공하였습니다!</h1>
+                <div id="signup-success-login" class="signup-success-login">
+                    <Login/>
+                </div>
             </div>
         </div>
     )
